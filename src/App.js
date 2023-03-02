@@ -1,15 +1,20 @@
 import Headers from "./components/Headers.jsx";
-import Card from "./components/Card.jsx";
+import { Route, Routes } from "react-router-dom"
+// ?===pages==
+import Home from "./pages/Home.jsx";
+import Register from "./pages/Register.jsx";
+import Table from "./pages/Table.jsx";
 
 function App (){
   return (
-    <>
-    <Headers/>    
-    <Card/> 
-    <Card/> 
-    <Card/> 
-    <Card/> 
-    </>
+   <div className="app">
+     <Headers/>
+    <Routes>
+      <Route path="/" element= {<Home/>}/>
+      <Route path="/register" element= {<Register/>}/>
+      <Route path="/table" element= {<Table/>}/>
+    </Routes>
+   </div>
     
   )
 }
