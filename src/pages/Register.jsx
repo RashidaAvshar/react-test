@@ -13,7 +13,9 @@ const Register = () => {
     surname: "",
     username: "",
     password: "",
-
+    id: Date.now()
+// bir dene onu bura elave eledin? he, amma gorunur, o pis haldi nece ki? gorunmemelidi ki? eslinde yox, bu sadece unikallig ucun lazimdi eslinde
+// basa dusmedim nei deirsen nie gorunmemelidi/? id bu formada
   })
 
   const onHandleChange = (e) =>{
@@ -29,7 +31,6 @@ const Register = () => {
     console.log("nhkj", userData)
   }
   
-
   const {name, surname, username, password} = userData
   return (
     <div className='container'>

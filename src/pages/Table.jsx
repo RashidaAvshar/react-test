@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BASE_URL } from '../utilis/constans';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'id', headerName: 'ID', width: 300 },
   { field: 'name', headerName: 'Name', width: 130 },
   { field: 'surname', headerName: 'Surname', width: 130 },
   { field: 'username', headerName: 'Username', width: 130 },
@@ -13,14 +13,17 @@ const columns = [
 ];
 
 
-
 const Table = () => {
 
   const [userData, setUserData] = useState([]);
     useEffect(()=>{
         axios.get(`${BASE_URL}/get-data`).then((res)=>{
-        setUserData(res.userData);
+          
+        setUserData( res.data.data);
+        console.log(res.data)
+        
     })
+    // console.log(userData)
     },[]);
 
   return (
